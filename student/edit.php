@@ -410,7 +410,7 @@
 				}
 				else
 				{
-					echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+					echo '<script type="text/javascript">alert("Unsuccessful due to server error!")</script>';
 				}
 			}
 			else

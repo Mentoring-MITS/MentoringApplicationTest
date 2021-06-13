@@ -176,10 +176,3 @@
     </script>
 </body>
 </html>
-function myFunction(){
-    document.getElementById("feedback").style.zIndex="2";
-}
-function hide(){
-    document.getElementById("feedback").style.zIndex="-1";
-}
-</script>

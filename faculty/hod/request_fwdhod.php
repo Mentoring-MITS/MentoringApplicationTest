@@ -79,26 +79,33 @@
 		            echo"<br>";
 		            echo"<br>";
 		            echo"<br>";
-		            echo "Username: $username";
-		            echo"<br>";
-		            echo "Reason: $reason";
-		            echo"<br>";
-		            echo"<br>";
+		            // echo "Username: $username";
+		            // echo"<br>";
+		            // echo "Reason: $reason";
+		            // echo"<br>";
+		            // echo"<br>";
+					if ($flag1 == 1) { ?>
+						<form method="post" action="request_fwdhod.php">
+						<?php
+							echo "Username: $username";
+							echo"<br>";
+							echo "Reason: $reason";
+							echo"<br>";
+						?>
+							<input type="hidden" name="user1" value="<?php echo $username; ?>">
+							<button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left mr-8" type="submit">Approve</button></a>
+							<button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button></a>
+						</form>
+						<?php }
+						else {
+							echo "NO REQUESTS AVAILABLE";
+						}
 
 		        }
 				}
 			}
 		  ?>
-		  		<?php if ($flag1 == 1) { ?>
-		      <form method="post" action="request_fwdhod.php">
-		      <input type="hidden" name="user1" value="<?php echo $username; ?>">
-			  <button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Approve</button></a>
-			  <button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button></a>
-			    </form>
-				  <?php }
-				  else {
-					echo "NO REQUESTS AVAILABLE";
-				} ?>
+		   
 
 			<?php 
 			if(isset($_POST['forward']))

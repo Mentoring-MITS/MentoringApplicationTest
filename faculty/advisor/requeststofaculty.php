@@ -96,7 +96,7 @@
 		                  if( $row["dateofbirth"]!=$row1["dateofbirth"])
 		                  {
 		                      @$dob=$row1["dateofbirth"];
-		                      echo "Edited dob: $dateofbirth";
+		                      echo "Edited dob: $dob";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
@@ -180,7 +180,7 @@
 						  if( $row["school12"]!=$row1["school12"])
 		                  {
 		                      @$school12=$row1["school12"];
-		                      echo "Edited 12th School name: $school13";
+		                      echo "Edited 12th School name: $school12";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }

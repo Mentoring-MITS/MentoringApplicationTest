@@ -36,6 +36,9 @@
                     <a href="student_list.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
                         Student List
                     </a>
+                    <a href="manage_chat.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                        Manage Chat
+                    </a>
                     <a href="ChangePassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
                         Change Password
                     </a>
@@ -71,7 +74,7 @@
                             <option value="2020">2020</option>
                         </select>
                         <!-- <div class="flex items-center justify-between"> -->
-                            <button class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-400 hover:bg-blue-700 mt-4 lg:mt-0" type="submit" name="survey">
+                            <button class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-white hover:bg-blue-600 mt-4 lg:mt-0" type="submit" name="survey">
                                     Submit
                             </button>
                         <!-- </div> -->
@@ -80,20 +83,6 @@
             </div>
         </div>
     </div>
-    <div class=" px-1 py-2 bg-blue-400 flex justify-center shadow-md rounded">
-                                <div class="w-3/4 lg:flex bg-white shadow-md rounded px-4 py-4 mb-4 " >
-                                    <div class="w-full  py-2 ">
-                                    <table class="text-left w-full ">
-		<thead class="bg-blue-400 flex text-white w-full"> 
-  
-        <tr class="flex w-full mb-2">
-            <th class="p-2 w-1/4">Name</th>
-            <th class="p-2 w-1/4">Department</th>  
-            <th class="p-2 w-1/4">Batch</th>  
-            <th class="p-2 w-1/4">Concern Form</th> 
-        </tr>  
-        </thead>
-        <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
     <?php
         if(isset($_POST['survey'])){
             $department = $_POST['department'];
@@ -105,23 +94,27 @@
             if($query_run)
             {
                 if(mysqli_num_rows($query_run)>0){
+                    //div starts
                     ?>
-                        
+                    <div class=" px-1 py-2 bg-blue-400 flex justify-center shadow-md rounded">
+                        <div class="w-3/4 lg:flex bg-white shadow-md rounded px-4 py-4 mb-4 " >
+                            <div class="w-full  py-2 ">
+                                <table class="text-left w-full ">
+                                    <thead class="bg-blue-400 flex text-white w-full"> 
+                                        <tr class="flex w-full mb-2">
+                                            <th class="p-2 w-1/4">Name</th>
+                                            <th class="p-2 w-1/4">Department</th>  
+                                            <th class="p-2 w-1/4">Batch</th>  
+                                            <th class="p-2 w-1/4">Concern Form</th> 
+                                        </tr>  
+                                    </thead>
+                                    <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">                   
 
-                    <?php                          
+                    <?php         
+                    //div ends                
                                         //looping through all students
                                         while($row=mysqli_fetch_assoc($query_run)){
-                                            $name       = $row['name'];
-                                            //$dob        = $row['dob'];
-                                            //$gender     = $row['gender'];
-                                            //$cause      = $row['cause'];
-                                            //$expstress  = $row['expstress'];
-                                            //$factors    = $row['factors'];
-                                            //$cognitive  = $row['cognitive'];
-                                            //$emotional  = $row['emotional'];
-                                            //$socialeff  = $row['socialeff'];
-                                            //$regno      = $row['regno'];
-
+                                            $name       = $row['name']; 
                                             //printing 
                                             ?>
                                                 <tr class="flex w-full mb-2">
@@ -129,7 +122,7 @@
                                                         <td class="p-1 w-1/4 overflow-hidden"><?php echo $department; ?></td>
                                                         <td class="p-1 w-1/4 overflow-hidden"><?php echo $batch; ?></td>
                                                     </div> 
-                                                    <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="student_view.php?user='.$name.'" class="inline-block text-sm px-4 py-1 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-400 hover:bg-blue-700 mt-4 lg:mt-0">View</a>'; ?></td>
+                                                    <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="student_view.php?user='.$name.'" class="inline-block text-sm px-4 py-1 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-white hover:bg-blue-600 mt-4 lg:mt-0">View</a>'; ?></td>
                                                     </tr>  
                                             <?php
                                         }

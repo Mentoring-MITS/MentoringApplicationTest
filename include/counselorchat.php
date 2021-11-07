@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="../css/chat.css">
     <link rel="stylesheet" href="../css/tailwind.min.css">
     <style>
+        #feedback{
+            position:absolute;
+            top : 20%;
+            left: 37%;
+        }
         .scrollbar-w-2::-webkit-scrollbar {
         width: 0.25rem;
         height: 0.25rem;
@@ -58,6 +63,9 @@
                 <a href="../counselor/student_list.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
                     Student List
                 </a>
+                <a href="manage_chat.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                    Manage Chat
+                </a>
                 <a href="../counselor/ChangePassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
                     Change Password
                 </a>
@@ -79,8 +87,10 @@
         $c_row=$cname_run->fetch_assoc();
     }
     $student= $c_row['name'];
+    $dept1 = $c_row['dept'];
     ?>
-    <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col " style="height: 87vh;">
+     
+    <div id="messages" class="flex-1 p:2 sm:p-6 justify-between flex flex-col " style="height: 87vh;poition:absolute;z-index:10;">
         <div class="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
             <div class="flex items-center space-x-4">
                 <div class="flex flex-col leading-tight">
@@ -95,8 +105,10 @@
                     <span class="text-lg text-gray-600"><?php echo $user;?></span>
                 </div>
             </div>
+            <button onclick=myFunction() class="inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-blue-600 border-transparent hover:border-white-600 hover:text-blue-600 hover:bg-white mt-4 lg:mt-0">End Chat</button>
         </div>
-        <div id="messages" class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
+
+        <div  class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
             <?php
             $no_messages=false;
             if($no_messages==false){
@@ -171,8 +183,18 @@
         </div>
     </div>
     <script>
+        function myFunction(){
+            document.getElementById("feedback").style.opacity="1";
+            document.getElementById("feedback").style.zIndex="10";
+        }
+        function hide(){
+            document.getElementById("feedback").style.zIndex="-1";
+             document.getElementById("feedback").style.opacity="1";
+
+        }
+    <script>
         const el = document.getElementById('messages') 
         el.scrollTop = el.scrollHeight
     </script>
 </body>
-</html>
+</html> 

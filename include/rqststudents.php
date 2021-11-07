@@ -37,6 +37,9 @@
                     <a href="../counselor/student_list.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
                         Student List
                     </a>
+                    <a href="../counselor/manage_chat.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                        Manage Chat
+                    </a>
                     <a href="../counselor/ChangePassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
                         Change Password
                     </a>
@@ -105,7 +108,7 @@
         if(mysqli_num_rows($r)>0){
             while($row=mysqli_fetch_assoc($r)){
                 $sender_name=$row['username'];
-                $query1='select name from student where username="'.$username.'";';
+                $query1='select name from student where username="'.$sender_name.'";';
                 $query1_run = mysqli_query($con,$query1);
                 if($query1_run){
                     if(mysqli_num_rows($query1_run)>0){
@@ -133,14 +136,14 @@
     $r=mysqli_query($con,$sql);
     if($r){
         if(mysqli_num_rows($r)>0){
-            while($row=mysqli_fetch_assoc($r)){
-                $sender_name=$row['username'];
-                $query1='select name from student where username="'.$username.'";';
+            while($row3=mysqli_fetch_assoc($r)){
+                $sender_name=$row3['username'];
+                $query1='select name from student where username="'.$sender_name.'";';
                 $query1_run = mysqli_query($con,$query1);
                 if($query1_run){
                     if(mysqli_num_rows($query1_run)>0){
-                        $row1=mysqli_fetch_assoc($query1_run);
-                        $name=$row1['name'];
+                        $row4=mysqli_fetch_assoc($query1_run);
+                        $name=$row4['name'];
                     }
                 }
                     ?>

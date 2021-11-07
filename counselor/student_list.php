@@ -52,7 +52,7 @@
 		<div class="w-3/4 bg-white shadow-md rounded px-4 mb-2 " >
             <div class="w-full overflow-y-hidden"> 
                 <div class="mb-2">
-                    <h2>Select Department & Batch:</h2></br>
+                    <h2>Select Department & Batch(Concern Form):</h2></br>
                     <form class="form" action="student_list.php" method="post">
                         <label class="text-gray-700 text-md font-bold mb-2" for="department">
                             Department:
@@ -60,8 +60,8 @@
                         <select id="department" class="border border-gray-lighter" name="department" required>
                             <option value="CSE">CSE</option>
                             <option value="CE">CE</option>
-                            <option value="EC">EC</option>
-                            <option value="EEE">EE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
                             <option value="ME">ME</option>
                         </select>
                         <label class=" text-gray-700 text-md font-bold mb-2" for="batch">

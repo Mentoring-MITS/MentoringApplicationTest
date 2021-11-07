@@ -89,6 +89,7 @@
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="address" type="text" value="<?php echo $row["address"];?>">
 			</div>
 		</div>
+		
 		<div class="-mx-3 md:flex mb-">
 			
 			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
@@ -147,6 +148,14 @@
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="mocc" type="text" value="<?php echo $row['mocc'];?>"  >
 			</div>
 		</div>	
+		<div class="-mx-3 md:flex mb-6">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+				LinkedIN
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="address" type="text" value="<?php echo $row["linkedin"];?>">
+			</div>
+		</div>
 		<!-- <div class="container"> -->
 		<!-- <div class="flex my-3 "> -->
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >

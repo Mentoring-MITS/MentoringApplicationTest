@@ -1,4 +1,5 @@
 <?php
+    require '..\vendor\autoload.php';
     session_start();
     require_once('../dbconfig/config.php');
     if(!isset($_SESSION['username'])){
@@ -81,10 +82,27 @@
                     <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
 					    <img src="../imgs/avatar.png" /> 
 				    </div> -->
-				    <div class="w-full  py-6 overflow-y-hidden"> 
-                    <button class="uppercase p-3 flex items-center bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-10 h-10 ">
-                <svg width="32" height="32"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-                </button>
+				    <div class="w-full  py-6 overflow-y-hidden">
+                    <form action="student_details.php" method="post">
+                        <!-- input begin -->
+                        <input type="hidden" name="name" value=<?php echo $name;?>>
+                        <input type="hidden" name="dob" value=<?php echo $dob;?>>
+                        <input type="hidden" name="gender" value=<?php echo $gender;?>>
+                        <input type="hidden" name="cause" value=<?php echo $cause;?>>
+                        <input type="hidden" name="expstress" value=<?php echo $expstress;?>>
+                        <input type="hidden" name="factors" value=<?php echo $factors;?>>
+                        <input type="hidden" name="cognitive" value=<?php echo $cognitive;?>>
+                        <input type="hidden" name="emotional" value=<?php echo $emotional;?>>
+                        <input type="hidden" name="socialeff" value=<?php echo $socialeff;?>>
+                        <input type="hidden" name="regno" value=<?php echo $regno;?>>
+                        <input type="hidden" name="batch" value=<?php echo $batch;?>>
+                        <input type="hidden" name="department" value=<?php echo $department;?>>
+                        <!-- input end -->
+                        <button type="submit" name="submit_pdf" class="uppercase p-3 flex items-center bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-10 h-10 ">
+                            <!-- <input type="submit" name="submit_pdf"> -->
+                            <svg width="32" height="32"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                        </button>
+                    </form>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-md font-bold mb-2" >
                                 STUDENT DETAILS
